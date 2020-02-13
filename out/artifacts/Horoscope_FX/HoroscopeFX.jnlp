@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="HoroscopeFX.jnlp">
+  <information>
+    <title>Horoscope FX</title>
+    <vendor>Unknown</vendor>
+    <description>Horoscope FX</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="HoroscopeFX.jar" size="106093" download="eager" />
+    <jar href="jsoup-1.11.3.jar" size="395748" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="com.hallberg.Main"  name="Horoscope FX" />
+  <update check="background"/>
+</jnlp>
