@@ -44,8 +44,13 @@ public class Controller implements Initializable {
         title.setFont(new Font("Arial", 18));
         title.setText("Welcome to Horoscope FX");
         inputTitle.setStyle("-fx-font-weight: bold;");
-        thisMonth.setSelected(true);
         aries.setSelected(true);
+        nextMonth.setSelected(true);
+        String[] date = chooseDate();
+        nextMonth.setText("Next month, " + date[0] + " " + date[1]);
+        thisMonth.setSelected(true);
+        date = chooseDate();
+        thisMonth.setText("This month, " + date[0] + " " + date[1]);
         scrape();
     }
 
@@ -66,12 +71,12 @@ public class Controller implements Initializable {
         //alert.setHeaderText("Dialog popup");
         dialog.setHeaderText(null);
         dialog.setGraphic(null);
-        String s ="Horoscope FX version 1.0\n\n" +
+        String s ="Horoscope FX version 1.11\n\n" +
                 "Pick your sign and desired time period.\n" +
                 "Your forecast will be shown for that \n" +
                 "sign and time period in the lower\n" +
                 "right corner.\n\n" +
-                "\u00a9 Mikael Hallberg 2020";
+                "Copyright \u00a9 2020 Mikael Hallberg. All Rights Reserved.";
         dialog.setContentText(s);
         dialog.getDialogPane().setBackground(Background.EMPTY);
         dialog.getDialogPane().setLayoutX(100.100);
@@ -123,7 +128,7 @@ public class Controller implements Initializable {
         //System.out.println(date[1]);
         //System.out.println(sign);
 
-        String url = "https://www.sunsigns.org/" + sign + "-" + date[0] + "-" + date[1] + "-horoscope/";
+        String url = "https://www.sunsigns.org/" + sign + "-" + date[0].toLowerCase() + "-" + date[1] + "-horoscope/";
         //String url = "https://www.svd.se/";
 
         try {
